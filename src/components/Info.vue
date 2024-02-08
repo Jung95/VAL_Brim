@@ -1,0 +1,21 @@
+<template>
+        <v-container class="text-center">
+          <v-row justify="center">
+            <v-col cols="4">
+    <v-card>
+        <v-card-title>Valorant Brimstone Lineups</v-card-title>
+        <v-card-subtitle>
+            Last Update : 2024-02-08
+        </v-card-subtitle>
+        <v-card-text>
+            1. Select Map<br>
+            2. Select Team<br>
+            3. Select Target<br>
+            * Click on the Image to Zoom<br>
+            <a href="https://github.com/Jung95/VAL_Brim">Github</a>
+        </v-card-text>
+    </v-card>
+    </v-col>
+    </v-row>
+    </v-container>
+</template>

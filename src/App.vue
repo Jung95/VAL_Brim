@@ -3,6 +3,7 @@ import Map from "./components/Map.vue";
 import Target from "./components/Target.vue";
 import Team from "./components/Team.vue";
 import LineUp from "./components/LineUp.vue";
+import Info from "./components/Info.vue";
 
 import { ref, watch } from "vue";
 
@@ -26,6 +27,8 @@ watch(selectedTeam, resetSelectedTarget);
   <Target :selected-map="selectedMap" :selected-team="selectedTeam" @update:selectedTarget="selectedTarget = $event"></Target>
   <Team @update:selectedTeam="selectedTeam = $event"></Team>
   <LineUp :selected-map="selectedMap" :selected-team="selectedTeam" :selected-target="selectedTarget" v-if="selectedTarget"></LineUp>
+  <Info v-if="!selectedTarget"></Info>
+
 </template>
 
 <script>
