@@ -12,7 +12,7 @@
       <v-row justify="center" v-if="selectedTarget">
         <v-col cols="auto">
           <v-btn @click="showTarget" color="#dc3d4b">
-            Show Target ({{ selectedMap + " " + selectedTeam + " " + selectedTarget }})
+            Show Target <br>({{ selectedMap + " " + selectedTeam + " " + selectedTarget }})
             <v-dialog v-model="dialog" activator="parent" width="80vw">
               <v-card>
                 <v-card-text>
