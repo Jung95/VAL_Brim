@@ -1,19 +1,19 @@
 <script setup>
-import Map from './components/Map.vue'
-import Target from './components/Target.vue';
-import Team from './components/Team.vue'
-import { ref } from 'vue';
+import Map from "./components/Map.vue";
+import Target from "./components/Target.vue";
+import Team from "./components/Team.vue";
+
+import { ref } from "vue";
 
 // 선택된 맵과 팀을 저장하기 위한 반응형 데이터
-const selectedMap = ref('Bind');
-const selectedTeam = ref('Attacker'); // 예시를 위해 초기값 설정
+const selectedMap = ref("Bind");
+const selectedTeam = ref("Attacker"); // 예시를 위해 초기값 설정
 </script>
 
 <template>
   <Map @update:selectedMap="selectedMap = $event"></Map>
-  <Target :selected-map="selectedMap" :selected-team="selectedTeam"></Target>
+  <Target :selected-map="selectedMap" :selected-team="selectedTeam" @update:selectedTarget="selectedTarget = $event"></Target>
   <Team @update:selectedTeam="selectedTeam = $event"></Team>
-
 </template>
 
 <style scoped>

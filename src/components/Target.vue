@@ -10,20 +10,26 @@
             :key="targetName"
             color="#BD3944"
             style="margin: 5px"
-            @click="setTargetImage(targetName)"
+            @click="setTarget(targetName)"
           >
             {{ targetName }}
           </v-btn>
         </v-col>
       </v-row>
-      <v-row justify="center">
+      <v-row justify="center" v-if="selectedTarget">
         <v-col cols="auto">
-          <v-btn>
-            Show Target
+          <v-btn @click="showTarget">
+            Show Target ({{
+              selectedMap + " " + selectedTeam + " " + selectedTarget
+            }})
             <v-dialog v-model="dialog" activator="parent" width="auto">
               <v-card>
                 <v-card-text>
-                   <v-img :src="currentTargetImagePath"></v-img>
+                  <img
+                    height="500px"
+                    id="target_img"
+                    :src="currentTargetImagePath"
+                  />
                 </v-card-text>
                 <v-card-actions>
                   <v-btn color="primary" block @click="dialog = false"
@@ -53,13 +59,20 @@ export default {
       return [];
     },
   },
-  watch:{
-
+  watch: {
+    // selectedMap 또는 selectedTeam이 변경될 때마다 실행됩니다.
+    selectedMap() {
+      this.resetTarget();
+    },
+    selectedTeam() {
+      this.resetTarget();
+    },
   },
   data() {
     return {
-    dialog: false,
-    currentTargetImagePath: '', // 현재 선택된 타겟의 이미지 경로를 저장
+      dialog: false,
+      selectedTarget: "", // 현재 선택된 타겟의 이름을 저장
+      currentTargetImagePath: "", // 현재 선택된 타겟의 이미지 경로를 저장
       target: {
         Bind: {
           Attacker: [
@@ -125,10 +138,21 @@ export default {
       },
     };
   },
-  methods:{
-    setTargetImage(targetName) {
-      this.currentTargetImagePath = `/${this.selectedMap}/${this.selectedTeam}/${targetName}/target.jpg`;
+  methods: {
+    setTarget(targetName) {
+      this.selectedTarget = targetName;
+      this.$emit("update:selectedTarget", targetName);
     },
-  }
+    showTarget() {
+      this.currentTargetImagePath = `/${this.selectedMap}/${this.selectedTeam}/${this.selectedTarget}/target.jpg`;
+    },
+    resetTarget() {
+      // 타겟을 초기화하고 이미지 경로를 비웁니다.
+      this.selectedTarget = "";
+      this.currentTargetImagePath = "";
+
+      this.dialog = false;
+    },
+  },
 };
 </script>
