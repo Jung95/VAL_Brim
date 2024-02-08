@@ -4,8 +4,9 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
+    "generate-json": "node generate-json.js",
+    "dev": "npm run generate-json && vite",
+    "build": "npm run generate-json && vite build",
     "preview": "vite preview --port 8080"
   },
   "dependencies": {
