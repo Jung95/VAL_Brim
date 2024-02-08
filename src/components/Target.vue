@@ -13,10 +13,10 @@
         <v-col cols="auto">
           <v-btn @click="showTarget" color="#dc3d4b">
             Show Target ({{ selectedMap + " " + selectedTeam + " " + selectedTarget }})
-            <v-dialog v-model="dialog" activator="parent" width="auto">
+            <v-dialog v-model="dialog" activator="parent" width="80vw">
               <v-card>
                 <v-card-text>
-                  <img height="500px" id="target_img" :src="currentTargetImagePath" />
+                  <img width="100%" id="target_img" :src="currentTargetImagePath" />
                 </v-card-text>
                 <v-card-actions>
                   <v-btn color="primary" block @click="dialog = false">Close Target Image</v-btn>
