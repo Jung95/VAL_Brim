@@ -1,7 +1,7 @@
 {
   "Bind": {
     "Attacker": {
-      "A-Box-Left": 2
+      "B-Box-Left": 3
     },
     "Defender": {
       "A-To-B-Triple": 1,

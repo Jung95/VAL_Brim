@@ -1,7 +1,7 @@
 <template>
     <v-container class="mb-12">
         <v-row align="center" no-gutters>
-            <v-col v-for="n in folderCount" :key="n">
+            <v-col v-for="n in folderCount" :key="n" cols="12" md="6">
                 <v-card class="pa-2 ma-2" color="#FD4556" @click="">
                     <img :src="getImagePath(n)" alt="Lineup" width="100%" @click="showImage(n)">
                       <v-btn color="white" block @click="showPosition(n)">Show Position</v-btn>
