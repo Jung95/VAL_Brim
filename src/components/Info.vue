@@ -1,11 +1,11 @@
 <template>
         <v-container class="text-center">
           <v-row justify="center">
-            <v-col cols="4">
+            <v-col cols="12" sm="8" md="6"  lg="4">
     <v-card>
         <v-card-title>Valorant Brimstone Lineups</v-card-title>
         <v-card-subtitle>
-            Last Update : 2024-02-08
+            Last Update : 2024-02-09
         </v-card-subtitle>
         <v-card-text>
             1. Select Map<br>
