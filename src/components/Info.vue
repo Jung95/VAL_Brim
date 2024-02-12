@@ -36,6 +36,19 @@
               ></div>
               Sit
             </div>
+            /
+            <div style="display: inline-flex; align-items: center">
+              <div
+                style="
+                  border: 2px solid green;
+                  height: 13px;
+                  width: 13px;
+                  border-radius: 50%;
+                  margin-right: 5px;
+                "
+              ></div>
+              Jump
+            </div>
             <br /><a href="https://github.com/Jung95/VAL_Brim">Github</a>
           </v-card-text>
         </v-card>
